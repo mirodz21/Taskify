@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  width: 90%;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  border-radius: 10px;
+  padding: 1.5rem;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.todo_heading {
+  font-size: 2rem;
+  color: white;
+}
+
+.complete {
+  background-color: red;
+}
+.active {
+  background-color: cadetblue;
+}
+@media (max-width: 700px) {
+  .todos {
+    width: 95%;
+  }
+}
