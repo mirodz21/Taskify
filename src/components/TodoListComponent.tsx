@@ -19,7 +19,7 @@ function TodoListComponent({
 }: Props) {
   return (
     <div className="container">
-      <Droppable droppableId="Todo">
+      <Droppable droppableId="TodosList">
         {(provided) => (
           <div
             className="todos active"
@@ -40,7 +40,7 @@ function TodoListComponent({
           </div>
         )}
       </Droppable>
-      <Droppable droppableId="ToRemove">
+      <Droppable droppableId="TodosRemove">
         {(provided) => (
           <div
             className="todos complete"
@@ -51,8 +51,8 @@ function TodoListComponent({
             {completed.map((todo, index) => (
               <TodoComponent
                 index={index}
-                todo={todo}
                 key={todo.id}
+                todo={todo}
                 todos={completed}
                 setTodos={setCompleted}
               />
