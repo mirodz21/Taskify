@@ -20,9 +20,11 @@ function TodoListComponent({
   return (
     <div className="container">
       <Droppable droppableId="TodosList">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos active"
+            className={`todos active ${
+              snapshot.isDraggingOver ? "dragactive" : ""
+            }`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >

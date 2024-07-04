@@ -1,9 +1,9 @@
 .container {
   display: flex;
   width: 90%;
+  height: auto;
   margin-top: 20px;
   justify-content: space-between;
-  align-items: center;
 }
 
 .todos {
@@ -14,7 +14,6 @@
   padding: 1.5rem;
   flex-direction: column;
   text-align: center;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -25,10 +24,13 @@
 
 .complete {
   background-color: red;
+  height: auto;
 }
 .active {
   background-color: cadetblue;
+  height: auto;
 }
+
 @media (max-width: 700px) {
   .todos {
     width: 95%;
