@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Todo } from "./model";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { Typography } from "@mui/material";
 import InputComponent from "./components/InputComponent";
 import TodoListComponent from "./components/TodoListComponent";
 
@@ -28,9 +29,9 @@ const App: React.FC = () => {
       destination.index === source.index
     )
       return;
-    let add,
-      active = todos,
-      comp = completed;
+    let add;
+    let active = todos;
+    let comp = completed;
 
     if (source.droppableId === "TodosList") {
       add = active[source.index];
@@ -51,7 +52,9 @@ const App: React.FC = () => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="app">
-        <span className="heading">Taskify</span>
+        <Typography variant="h3" color="primary">
+          TASKIFY
+        </Typography>
         <InputComponent todo={todo} setTodo={setTodo} addTask={addTask} />
         <TodoListComponent
           todos={todos}

@@ -3,6 +3,7 @@ import "./TodoListComponent.css";
 import { Todo } from "../model";
 import TodoComponent from "./TodoComponent";
 import { Droppable } from "react-beautiful-dnd";
+import { Stack } from "@mui/material";
 
 interface Props {
   todos: Todo[];
@@ -18,7 +19,7 @@ function TodoListComponent({
   setCompleted,
 }: Props) {
   return (
-    <div className="container">
+    <Stack direction="row" width="80%" sx={{ mt: 3 }}>
       <Droppable droppableId="TodosList">
         {(provided, snapshot) => (
           <div
@@ -63,7 +64,7 @@ function TodoListComponent({
           </div>
         )}
       </Droppable>
-    </div>
+    </Stack>
   );
 }
 

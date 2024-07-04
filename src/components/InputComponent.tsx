@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./InputComponent.css";
+import { Button, Stack, TextField } from "@mui/material";
 
 interface Props {
   todo: string;
@@ -10,25 +11,35 @@ interface Props {
 function InputComponent({ todo, setTodo, addTask }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <form
+    <Stack
+      component="form"
       className="input"
+      width="80%"
+      direction="row"
       onSubmit={(e) => {
         addTask(e);
         inputRef.current?.blur();
       }}
     >
-      <input
+      <TextField
         ref={inputRef}
-        type="input"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
-        placeholder="Add Task"
-        className="input_box"
+        label="Add Task"
+        color="primary"
+        className="text_input"
       />
-      <button className="submit" type="submit">
-        +
-      </button>
-    </form>
+      <Button
+        sx={{ ml: 2 }}
+        className="submit"
+        color="primary"
+        variant="contained"
+        size="large"
+        type="submit"
+      >
+        ADD
+      </Button>
+    </Stack>
   );
 }
 
