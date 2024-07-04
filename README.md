@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Taskify
+Task application with drag and drop functionality
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
